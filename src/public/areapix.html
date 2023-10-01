@@ -1,0 +1,306 @@
+<html lang="pt-BR" onmouseleave="fecharsesair()">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casamento de Jean e Bruna">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="controllers/payment.controller.js"></script>
+    <link rel="shortcut icon" href="img/LOGO.png" type=".png">
+
+    <title>Área Pix ❖</title>
+
+</head>
+
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="container-logo" id="botaomenu" onmouseover="fecharsesair()">
+        <img src="img/LOGO-NAV.png" alt="logo" class="logo">
+        <label for="container-logo" class="label-menu">Menu</label>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="index.html"><img src="img/LOGO-NAV.png" alt="logo" class="logo"></a>
+        <a href="index.html" class="link-menu">Pagina inicial</a>
+        <a href="produtos.html" class="link-menu">Lista de presentes</a>
+        <a href="areapix.html" class="link-menu">Área Pix</a>
+        <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmar">
+    </nav>
+    <nav class="nav-bar2" id="menulateral">
+        <div class="container-fecharmenu" onclick="fecharmenu()">
+            <img src="img/LOGO-NAV.png" alt="logo" class="logo">
+            <label for="menulateral">Fechar</label>
+        </div>
+
+        <br>
+        <a href="index.html" class="link-menu2">Pagina inicial</a>
+        <a href="produtos.html" class="link-menu2">Lista de presentes</a>
+        <a href="areapix.html" class="link-menu2">Área Pix</a>
+        <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmarlateral">
+
+    </nav>
+    <div class="bloqueio"></div>
+    <br>
+        <form action="https://api.staticforms.xyz/submit" method="post" class="confirmarpresença" id="telaconfirmação">
+
+            <h1>CONFIRME SUA PRESENÇA!</h1>
+            <div class="buttoninfo" id="btninfo" onclick="infobox()"><img src="img/info.png"></div>
+            <div class="info" id="info">
+                <p>1: Em caso de ser mais de um pessoa da sua família convidada, clique em "Adicionar nome" e insira.
+                </p>
+                <p>2: Se desejar escolher mais de um presente basta clicar no botão abaixo "Mais presentes."</p>
+                <p>3: Dúvidas entre em contato com Jean Lima tel:[(81) 989092267]</p>
+            </div>
+            <br>
+            <div class="container-inputs">
+                <label for="nome">Nome</label>
+                <input type="text" name="name" class="inputform" placeholder="Digite seu nome" required>
+                <div id="campos-nome-adicionais">
+                    <!-- Aqui serão adicionados os campos de nome extras -->
+                </div>
+
+                <button id="adicionar-nome" class="inputformadc">Adicionar Nome</button>
+            </div>
+            <br>
+            <div class="container-inputs">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" class="inputform" name="email" placeholder="Ex:seuemail@exemplo.com"
+                    required>
+            </div>
+
+            <br>
+            <div class="container-inputs">
+                <label for="presente">Presente</label>
+                <select id="escolha-presente" name="message" class="inputform" required>
+                    <option value="">Escolha um presente</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Jogo de panelas">Jogo de panelas</option>
+                    <option value="Aparelho de jantar">Aparelho de jantar</option>
+                    <option value="Kit Potes herméticos">Kit Potes herméticos</option>
+                    <option value="Edredom">Edredom</option>
+                    <option value="Jogo de toalhas">Jogo de toalhas</option>
+                    <option value="Jogo de cama casal">Jogo de cama casal</option>
+                    <option value="Jogo de sobremesa">Jogo de sobremesa</option>
+                    <option value="Tábua de passar roupa">Tábua de passar roupa</option>
+                    <option value="Jogo de descanso de panelas">Jogo de descanso de panelas</option>
+                    <option value="Jogo americano (sousplat)">Jogo americano (sousplat)</option>
+                    <option value="Porta copos de sofá">Porta copos de sofá</option>
+                    <option value="Jogo de panelas antiaderente">Jogo de panelas antiaderente</option>
+                    <option value="Escorredor de pratos">Escorredor de pratos</option>
+                    <option value="Cesto de roupa">Cesto de roupa</option>
+                    <option value="Ventilador">Ventilador</option>
+                    <option value="Cafeteira expresso de cápsulas">Cafeteira expresso de cápsulas</option>
+                    <option value="Micro-ondas">Micro-ondas</option>
+                    <option value="Aspirador de pó">Aspirador de pó</option>
+                    <option value="Cortina blackout">Cortina blackout</option>
+                </select>
+                <div id="campos-presentes-adicionais">
+                    <!-- Aqui serão adicionados os campos de nome extras -->
+                </div>
+                <button id="adicionar-presente" class="inputformadc">Mais presentes</button>
+            </div>
+
+            <br>
+            <input type="submit" value="Confirmar Presença" class="inputformsubmit">
+            <br>
+            <br>
+            <button id="fechartelaconfirmação" class="btnfechar"><img src="img/fechar.png"></button>
+            <input type="hidden" name="redirectTo" value="http://localhost:3000/agradecimento.html">
+            <input type="hidden" name="accessKey" value="a5357ae2-6c75-467f-a75e-d377094b7733">
+        </form>
+    <section class="main">
+
+        <h1 class="titulo-central">ÁREA PIX ❖</h1>
+        <section class="container-presentes">
+            <div class="container-list" id="1">
+                <div class="container-imglist">
+                    <img src="img/pix.jpeg" alt="imglista" class="imglista">
+                </div>
+
+                <div class="texto-list">
+                    <h2 id="nome"> E o pix, nada ainda?</h2>
+                    <h2 id="valor">R$ 100,00</h2>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/A4t2zAxdze" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-list" id="2">
+                <div class="container-imglist">
+                    <img src="img/dinner.png" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Primeiro jantar dos noivos</h2>
+                    <h2>R$ 120,00</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/vQC1J0lbYS"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-list" id="3">
+                <div class="container-imglist">
+                    <img src="img/noiva-chorando.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Lenço para a noiva não borrar toda a maquiagem</h2>
+                    <h2 id="valor">R$ 90,00</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/V1R463Mq7F"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-list" id="4">
+                <div class="container-imglist">
+                    <img src="img/maracuja.png" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Maracujina para os noivos</h2>
+                    <h2 id="valor">R$ 70,00</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/hqql0iW9b2"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-list" id="5">
+                <div class="container-imglist">
+                    <img src="img/cobertaderazao.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Cobertor para a Bruna que está sempre coberta de razão</h2>
+                    <h2 id="valor">R$ 75,00</h2>
+                    <br>
+                    <div class="container-botao">
+                       <a href="https://nubank.com.br/pagar/105j6h/7sDQMR7ivu"><input type="button" value="PRESENTEAR" class="inputbutton"></a> 
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-list" id="6">
+                <div class="container-imglist">
+                    <img src="img/buque.jpeg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Aumente em 50% a chance de pegar o buquê</h2>
+                    <h2 id="valor">R$ 80,00</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/a9Pj2Xdtoz"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-list" id="7">
+                <div class="container-imglist">
+                    <img src="img/filabuffet.jpeg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Primeiro lugar na fila do buffet</h2>
+                    <h2 id="valor">R$ 85,00</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/JzDPgBoDo8"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-list" id="8">
+                <div class="container-imglist">
+                    <img src="img/hamburguer.jpeg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Garanta o jantar do noivo durante 1º mês de casado</h2>
+                    <h2 id="valor">R$ 500,00</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/yS6njGDAQN"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-list" id="9">
+                <div class="container-imglist">
+                    <img src="img/cueca.jpeg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Cueca sexy para o noivo</h2>
+                    <h2 id="valor">R$ 124,90</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/zMezlE7P4h"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-list" id="10">
+                <div class="container-imglist">
+                    <img src="img/noivavestido.jpeg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Amo vocês mas gastei boa parte da grana no look!</h2>
+                    <h2 id="valor">R$ 95,00</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/DnoZjgBiKn"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-list" id="11">
+                <div class="container-imglist">
+                    <img src="img/meajuda.jpeg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Calmantes pro dia do casamento</h2>
+                    <h2 id="valor">R$ 200,00</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/GUsCwzAMzU"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-list" id="12">
+                <div class="container-imglist">
+                    <img src="img/mulherpeloamor.jpeg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Psicólogo pros noivos não surtarem nos preparativos</h2>
+                    <h2 id="valor">R$ 315,98</h2>
+                    <br>
+                    <div class="container-botao">
+                        <a href="https://nubank.com.br/pagar/105j6h/doUTs9XL4V"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <br>
+        </footer>
+    </section>
+
+
+
+    <script src="JS/script.js"></script>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+
+</body>
+
+</html>

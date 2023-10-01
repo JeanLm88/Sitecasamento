@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    user-select: none;
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #8080003b;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Define a cor da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #acacac;
+}
+
+/* Define a cor do fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+    background-color: #f2f2f232;
+}
+
+a {
+    text-decoration: none;
+    font-size: 10pt;
+    color: #a47171;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffacac;
+}
+.nav-bar {
+    width: 100%;
+    height: 3.5rem;
+    background-color: #b7b75e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    overflow: hidden;
+    z-index: 999;
+
+}
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-bar2 {
+    display: none;
+}
+
+
+.link-menu {
+    margin-left: 50px;
+    text-decoration: none;
+    font-size: 10pt;
+    color: #ffffff;
+}
+
+.link-menu:hover {
+    text-decoration: underline;
+    color: #808000;
+}
+
+.link-menu2 {
+    margin-left: 50px;
+    margin-block: 15px;
+    text-decoration: none;
+    font-size: 10pt;
+    color: #ffffff;
+}
+
+.link-menu2:hover {
+    text-decoration: underline;
+    color: #808000;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container-sobrenos {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+}
+
+.texto {
+    max-width: 100%;
+
+}
+
+.texto h1 {
+    font-size: 24px;
+}
+
+#myCarousel {
+    max-width: 100%;
+    margin-right: 20px;
+    transition: all 0.5s;
+}
+
+#myCarousel img {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 900px;
+    height: 300px;
+
+}
+
+.center-text {
+    text-align: center;
+
+}
+
+.texto {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 15px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    transition: all 1s;
+    transform: translate(-50% 50%);
+    box-shadow: 3px 2px 3px 2px #91912e86;
+}
+
+.title-sobrenós {
+    color: #808000;
+    font-style: italic;
+}
+.titulo-central {
+    margin-top: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35pt;
+    color: #808000;
+    font-style: italic;
+}
+.container-logo {
+    width: 200px;
+    height: 60px;
+    margin: 5px;
+    background-color: white;
+    color: #808000;
+    transition: all 1s;
+    border-radius: 15px;
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 99999;
+}
+
+@media screen and (max-width: 900px) {
+
+    .container-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+
+    }
+    .container-imglist {
+        width: 200px;
+        height: 230px;
+        overflow: hidden;
+    }
+
+    .texto-list {
+        flex-direction: column;
+        text-align: start;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 10px;
+    }
+
+    .texto-presente {
+        font-size: 11pt;
+    }
+
+
+    .nav-bar {
+        display: none;
+    }
+
+    .container-logo {
+        display: inline-flex;
+        z-index: 99;
+        position: fixed;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Sobreposição transparente */
+        display: none;
+        /* Inicialmente oculta */
+        z-index: 99;
+        /* Coloque a sobreposição acima de outros elementos */
+    }
+
+    .nav-bar2 {
+        width: 260px;
+        height: 100%;
+        z-index: 999;
+        transition: all 0.15s ease-out;
+        background-color: #b7b75e;
+        display: none;
+        justify-content: stretch;
+        flex-direction: column;
+        position: absolute;
+
+    }
+}
+.btnfechar {
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+}
+.btnfechar img{
+    width: 35px;
+    height: 35px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Sobreposição transparente */
+    display: none;
+    /* Inicialmente oculta */
+    z-index: 99;
+    /* Coloque a sobreposição acima de outros elementos */
+}
+
+
+
+.container-fecharmenu {
+    width: 200px;
+    height: 60px;
+    margin: 5px;
+    background-color: white;
+    color: #808000;
+    transition: background-color 0.5s;
+    border-radius: 15px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}

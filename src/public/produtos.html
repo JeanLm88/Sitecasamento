@@ -1,0 +1,351 @@
+<html lang="pt-BR" onmouseleave="fecharsesair()">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casamento de Jean e Bruna">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="controllers/payment.controller.js"></script>
+    <link rel="shortcut icon" href="img/LOGO.png" type=".png">
+
+    <title>Lista de presentes</title>
+
+</head>
+
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="container-logo" id="botaomenu" onmouseover="fecharsesair()">
+        <img src="img/LOGO-NAV.png" alt="logo" class="logo">
+        <label for="container-logo" class="label-menu">Menu</label>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="index.html"><img src="img/LOGO-NAV.png" alt="logo" class="logo"></a>
+        <a href="index.html" class="link-menu">Pagina inicial</a>
+        <a href="produtos.html" class="link-menu">Lista de presentes</a>
+        <a href="areapix.html" class="link-menu">Área Pix</a>
+        <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmar">
+    </nav>
+    <nav class="nav-bar2" id="menulateral">
+        <div class="container-fecharmenu" onclick="fecharmenu()">
+            <img src="img/LOGO-NAV.png" alt="logo" class="logo">
+            <label for="menulateral">Fechar</label>
+        </div>
+
+        <br>
+        <a href="index.html" class="link-menu2">Pagina inicial</a>
+        <a href="produtos.html" class="link-menu2">Lista de presentes</a>
+        <a href="areapix.html" class="link-menu2">Área Pix</a>
+        <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmarlateral">
+       
+    </nav>
+    <div class="bloqueio"></div>
+    <br>
+    <form action="https://api.staticforms.xyz/submit" method="post" class="confirmarpresença" id="telaconfirmação">
+        <h1>CONFIRME SUA PRESENÇA!</h1><div class="buttoninfo" id="btninfo" onclick="infobox()"><img src="img/info.png"></div>
+        <div class="info" id="info">
+            <p>1: Em caso de ser mais de um pessoa da sua família convidada, clique em "Adicionar nome" e insira.</p>
+            <p>2: Se desejar escolher mais de um presente basta clicar no botão abaixo "Mais presentes."</p>
+            <p>3: Dúvidas entre em contato com Jean Lima tel:[(81) 989092267]</p>
+        </div>
+        <br>
+        <div class="container-inputs">
+            <label for="nome">Nome</label>
+            <input type="text" name="name" class="inputform" placeholder="Digite seu nome" required>
+            <div id="campos-nome-adicionais">
+                <!-- Aqui serão adicionados os campos de nome extras -->
+            </div>
+    
+            <button id="adicionar-nome" class="inputformadc">Adicionar Nome</button>
+        </div>
+        <br>
+        <div class="container-inputs">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" class="inputform" name="email" placeholder="Ex:seuemail@exemplo.com" required>
+        </div>
+        
+        <br>
+        <div class="container-inputs">
+            <label for="presente">Presente</label>
+            <select id="escolha-presente" name="message" class="inputform" required>
+                <option value="">Escolha um presente</option>
+                <option value="Pix">Pix</option>
+                <option value="Jogo de panelas">Jogo de panelas</option>
+                <option value="Aparelho de jantar">Aparelho de jantar</option>
+                <option value="Kit Potes herméticos">Kit Potes herméticos</option>
+                <option value="Edredom">Edredom</option>
+                <option value="Jogo de toalhas">Jogo de toalhas</option>
+                <option value="Jogo de cama casal">Jogo de cama casal</option>
+                <option value="Jogo de sobremesa">Jogo de sobremesa</option>
+                <option value="Tábua de passar roupa">Tábua de passar roupa</option>
+                <option value="Jogo de descanso de panelas">Jogo de descanso de panelas</option>
+                <option value="Jogo americano (sousplat)">Jogo americano (sousplat)</option>
+                <option value="Porta copos de sofá">Porta copos de sofá</option>
+                <option value="Jogo de panelas antiaderente">Jogo de panelas antiaderente</option>
+                <option value="Escorredor de pratos">Escorredor de pratos</option>
+                <option value="Cesto de roupa">Cesto de roupa</option>
+                <option value="Ventilador">Ventilador</option>
+                <option value="Cafeteira expresso de cápsulas">Cafeteira expresso de cápsulas</option>
+                <option value="Micro-ondas">Micro-ondas</option>
+                <option value="Aspirador de pó">Aspirador de pó</option>
+                <option value="Cortina blackout">Cortina blackout</option>
+            </select>
+            <div id="campos-presentes-adicionais">
+                <!-- Aqui serão adicionados os campos de nome extras -->
+            </div>
+            <button id="adicionar-presente" class="inputformadc">Mais presentes</button>
+        </div>
+        
+        <br>
+        <input type="submit" value="Confirmar Presença" class="inputformsubmit">
+        <br>
+        <br>
+        <button id="fechartelaconfirmação" class="btnfechar"><img src="img/fechar.png"></button>
+        <input type="hidden" name="redirectTo" value="http://localhost:3000/agradecimento.html">
+        <input type="hidden" name="accessKey" value="a5357ae2-6c75-467f-a75e-d377094b7733">
+    </form>
+    <section class="main">
+
+        <h1 class="titulo-central">LISTA DE PRESENTES</h1>
+        <section class="container-presentes">
+            <div class="container-list" id="1">
+                <div class="container-imglist">
+                    <img src="img/panelasantiaderente.png" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2 id="nome">Jogo de panelas antiaderente</h2>
+                    <h2 id="valor">R$ 242,90</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout1" class="inputbutton">
+                </div>
+            </div>
+            <div class="container-list" id="2">
+                <div class="container-imglist">
+                    <img src="img/fornomicroondas.webp" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Forno Micro-ondas</h2>
+                    <h2 id="valor">R$ 569,00</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout2" class="inputbutton">
+
+                </div>
+            </div>
+            <div class="container-list" id="3">
+                <div class="container-imglist">
+                    <img src="img/panleas.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Jogo de panelas</h2>
+                    <h2 id="valor">R$ 194,90</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout3" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="4">
+                <div class="container-imglist">
+                    <img src="img/tabuadepassar.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Tábua de passar roupas</h2>
+                    <h2 id="valor">R$ 129,90</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout4" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="5">
+                <div class="container-imglist">
+                    <img src="img/ventilador.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Ventilador turbo</h2>
+                    <h2 id="valor">R$ 230,00</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout5" class="inputbutton">
+                </div>
+            </div>
+            <div class="container-list" id="6">
+                <div class="container-imglist">
+                    <img src="img/aparelhodejantar.webp" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Aparelho de jantar</h2>
+                    <h2 id="valor">R$ 220,00</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout6" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="7">
+                <div class="container-imglist">
+                    <img src="img/poteshermeticos.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Kit potes herméticos</h2>
+                    <h2 id="valor">R$ 130,00</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout7" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="8">
+                <div class="container-imglist">
+                    <img src="img/edredom.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Edredom casal</h2>
+                    <h2 id="valor">R$ 179,90</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout8" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="9">
+                <div class="container-imglist">
+                    <img src="img/toalhas.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Jogo de toalhas 5-Pçs</h2>
+                    <h2 id="valor">R$ 105,90</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout9" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="10">
+                <div class="container-imglist">
+                    <img src="img/camacasal.webp" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Jogo de cama casal</h2>
+                    <h2 id="valor">R$ 128,99</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout10" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="11">
+                <div class="container-imglist">
+                    <img src="img/sobremesa.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Jogo de sobremesa</h2>
+                    <h2 id="valor">R$ 67,40</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout11" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="12">
+                <div class="container-imglist">
+                    <img src="img/descansodepanela.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Jogo descansos de panela 6-Pçs</h2>
+                    <h2 id="valor">R$ 59,90</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout12" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="13">
+                <div class="container-imglist">
+                    <img src="img/jogoamericano.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Jogo americano (sousplat)</h2>
+                    <h2 id="valor">R$ 59,00</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout13" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="14">
+                <div class="container-imglist">
+                    <img src="img/portacopos.webp" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Porta copos de sofá</h2>
+                    <h2 id="valor">R$ 39,90</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout14" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="15">
+                <div class="container-imglist">
+                    <img src="img/escorredor.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Escorredor de pratos suspenso</h2>
+                    <h2 id="valor">R$ 170,00</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout15" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="16">
+                <div class="container-imglist">
+                    <img src="img/cesto.webp" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Cesto de roupas</h2>
+                    <h2 id="valor">R$ 80,00</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout16" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="17">
+                <div class="container-imglist">
+                    <img src="img/cafeteira.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Cafeteira expresso de capsulas</h2>
+                    <h2 id="valor">R$ 239,00</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout17" class="inputbutton">
+                </div>
+            </div>
+            
+            <div class="container-list" id="18">
+                <div class="container-imglist">
+                    <img src="img/aspiradordepó.jpg" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Aspirador de pó vertical</h2>
+                    <h2 id="valor">R$ 149,90</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout18" class="inputbutton">
+                </div>
+            </div>
+            <div class="container-list" id="19">
+                <div class="container-imglist">
+                    <img src="img/cortinablackout.webp" alt="imglista" class="imglista">
+                </div>
+                <div class="texto-list">
+                    <h2>Cortina blackout 200x140cm</h2>
+                    <h2 id="valor">R$ 52,90</h2>
+                    <br>
+                    <input type="button" value="PRESENTEAR" id="checkout19" class="inputbutton">
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <br>
+        </footer>
+    </section>
+
+
+
+    <script src="JS/script.js"></script>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+
+</body>
+
+</html>
