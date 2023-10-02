@@ -43,7 +43,7 @@ export const createOrder2 = async (req, res) => {
             {
                 title: "Micro-ondas Espelhado Philco",
                 description: "Microondas Philco PMO30EP 28 Litros Preto Com Porta Espelhada 1400w",
-                unit_price: 689.00,
+                unit_price: 569.00,
                 currency_id: "BRL",
                 quantity: 1,
                 picture_url:"https://a-static.mlcdn.com.br/800x560/jogo-de-panelas-eirilar-antiaderente-de-aluminio-grafite-14-pecas-especial/magazineluiza/235128200/3593fc92689b0a99b3f512e3f0ec5f50.jpg"

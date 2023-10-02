@@ -7,29 +7,29 @@ import bodyParser from 'body-parser';
 
 const router = Router();
 
-router.get("/create-order1", createOrder1);
-router.get("/create-order2", createOrder2);
-router.get("/create-order3", createOrder3);
-router.get("/create-order4", createOrder4);
-router.get("/create-order5", createOrder5);
-router.get("/create-order6", createOrder6);
-router.get("/create-order7", createOrder7);
-router.get("/create-order8", createOrder8);
-router.get("/create-order9", createOrder9);
-router.get("/create-order10", createOrder10);
-router.get("/create-order11", createOrder11);
-router.get("/create-order12", createOrder12);
-router.get("/create-order13", createOrder13);
-router.get("/create-order14", createOrder14);
-router.get("/create-order15", createOrder15);
-router.get("/create-order16", createOrder16);
-router.get("/create-order17", createOrder17);
-router.get("/create-order18", createOrder18);
-router.get("/create-order19", createOrder19);
+router.post("/create-order1", createOrder1);
+router.post("/create-order2", createOrder2);
+router.post("/create-order3", createOrder3);
+router.post("/create-order4", createOrder4);
+router.post("/create-order5", createOrder5);
+router.post("/create-order6", createOrder6);
+router.post("/create-order7", createOrder7);
+router.post("/create-order8", createOrder8);
+router.post("/create-order9", createOrder9);
+router.post("/create-order10", createOrder10);
+router.post("/create-order11", createOrder11);
+router.post("/create-order12", createOrder12);
+router.post("/create-order13", createOrder13);
+router.post("/create-order14", createOrder14);
+router.post("/create-order15", createOrder15);
+router.post("/create-order16", createOrder16);
+router.post("/create-order17", createOrder17);
+router.post("/create-order18", createOrder18);
+router.post("/create-order19", createOrder19);
 router.use(bodyParser.json()); // Analisa solicitações JSON
 router.use(bodyParser.urlencoded({ extended: true })); // Analisa solicitações com dados de formulário
 
-router.get("");
+
 
 router.get("/sucesso",(req,res)=> res.send("sucesso"));
 

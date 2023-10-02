@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function criarManipuladorCheckout(numero) {
         return async function () {
             const resposta = await fetch(`/create-order${numero}`, {
-                method: "GET",
+                method: "POST",
             });
             const data = await resposta.json();
             console.log(data);
@@ -187,11 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
-
-
-
-
-
 
 
 
