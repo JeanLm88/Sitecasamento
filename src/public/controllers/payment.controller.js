@@ -24,7 +24,7 @@ export const createOrder1 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -56,7 +56,7 @@ export const createOrder2 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -88,7 +88,7 @@ export const createOrder3 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -120,7 +120,7 @@ export const createOrder4 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -152,7 +152,7 @@ export const createOrder5 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -184,7 +184,7 @@ export const createOrder6 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -216,7 +216,7 @@ export const createOrder7 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -248,7 +248,7 @@ export const createOrder8 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -280,7 +280,7 @@ export const createOrder9 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -312,7 +312,7 @@ export const createOrder10 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -344,7 +344,7 @@ export const createOrder11 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -376,7 +376,7 @@ export const createOrder12 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -408,7 +408,7 @@ export const createOrder13 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -440,7 +440,7 @@ export const createOrder14 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -472,7 +472,7 @@ export const createOrder15 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -504,7 +504,7 @@ export const createOrder16 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -536,7 +536,7 @@ export const createOrder17 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -568,7 +568,7 @@ export const createOrder18 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
@@ -600,7 +600,7 @@ export const createOrder19 = async (req, res) => {
             failure: `${HOST}/falha`,
             pending: `${HOST}/pendente`,
         },
-        notification_url: "https://182a-164-163-20-198.ngrok.io/webhook",
+        notification_url: "https://listadepresentesbj.netlify.app/webhook",
 
     });
     
