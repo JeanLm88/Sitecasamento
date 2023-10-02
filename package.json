@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "C:/Users/jlima15/AppData/Roaming/npm/pm2 start src/public/index.js --name meu-servidor -f"
+    "start": "npx pm2 start src/public/index.js --name meu-servidor"
   },
   "keywords": [],
   "author": "",
