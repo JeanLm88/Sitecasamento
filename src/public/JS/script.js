@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-    // Adicione os manipuladores de evento de checkout de 1 a 18
+    
     for (let i = 1; i <= 19; i++) {
         const checkout = document.getElementById(`checkout${i}`);
         checkout.addEventListener("click", criarManipuladorCheckout(i));

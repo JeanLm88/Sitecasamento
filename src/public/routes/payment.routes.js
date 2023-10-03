@@ -37,6 +37,8 @@ router.get("/falha",(req,res)=> res.send("falha"));
 
 router.get("/pendente",(req,res)=> res.send("pendente"));
 
-router.post("/webhook",(req,res)=> receiveWebhook);
+router.post("/webhook", (req, res) => {
+  receiveWebhook(req, res); 
+});
 
 export default router;
