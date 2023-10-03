@@ -167,22 +167,22 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.style.display = 'none'; // Oculta o overlay
     }
 
-    function criarManipuladorCheckout(numero) {
-        return async function () {
-            const resposta = await fetch(`/create-order${numero}`, {
-                method: "POST",
-            });
-            const data = await resposta.json();
-            console.log(data);
-            window.location.href = data.init_point;
-        };
-    }
+   function criarManipuladorCheckout(numero) {
+    return async function () {
+        const resposta = await fetch(`/create-order${numero}`, {
+            method: "POST",
+        });
+        const data = await resposta.json();
+        console.log(data);
+        window.location.href = data.init_point;
+    };
+}
 
-    
-    for (let i = 1; i <= 19; i++) {
-        const checkout = document.getElementById(`checkout${i}`);
-        checkout.addEventListener("click", criarManipuladorCheckout(i));
-    }
+for (let i = 1; i <= 19; i++) {
+    const checkout = document.getElementById(`checkout${i}`);
+    checkout.addEventListener("click", criarManipuladorCheckout(i));
+}
+
 
 
 
@@ -201,3 +201,4 @@ function infobox(){
         info.style.display ="none";
     }
 }
+

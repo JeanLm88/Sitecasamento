@@ -58,3 +58,35 @@ body{
     flex-direction: column;
 
   }
+
+
+  .sucesso-notificacao{
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    font-style: oblique;
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    width: 300px;
+    max-height: 100%;
+    border-radius: 10px;
+    color: #5a5a02;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.sucesso-notificacao .palavraSuc{
+  color: #5a5a02;
+  font-size: x-large;
+}
+
+.aguarde{
+  font-size: 12px;
+  color: #303003;
+}
