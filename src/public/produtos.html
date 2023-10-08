@@ -24,8 +24,11 @@
         <a href="index.html"><img src="img/LOGO-NAV.png" alt="logo" class="logo"></a>
         <a href="index.html" class="link-menu">Pagina inicial</a>
         <a href="produtos.html" class="link-menu">Lista de presentes</a>
-        <a href="areapix.html" class="link-menu">Área Pix</a>
+        <a href="areapix.html" class="link-menu">Área Pix ❖</a>
         <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmar">
+        <div class="container-contador"><a class="link-menu">
+                <div id="countdown1" class="contador"></div>
+            </a></div>
     </nav>
     <nav class="nav-bar2" id="menulateral">
         <div class="container-fecharmenu" onclick="fecharmenu()">
@@ -36,19 +39,24 @@
         <br>
         <a href="index.html" class="link-menu2">Pagina inicial</a>
         <a href="produtos.html" class="link-menu2">Lista de presentes</a>
-        <a href="areapix.html" class="link-menu2">Área Pix</a>
+        <a href="areapix.html" class="link-menu2">Área Pix ❖</a>
         <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmarlateral">
-       
+        <a class="link-menu2">
+            <div id="countdown2" class="contador"></div>
+        </a>
+
     </nav>
     <div class="bloqueio"></div>
     <br>
     <form action="https://api.staticforms.xyz/submit" method="post" class="confirmarpresença" id="telaconfirmação">
-        <h1>CONFIRME SUA PRESENÇA!</h1><div class="buttoninfo" id="btninfo" onclick="infobox()"><img src="img/info.png"></div>
+        <h1>CONFIRME SUA PRESENÇA!</h1>
+        <div class="buttoninfo" id="btninfo" onclick="infobox()"><img src="img/info.png"></div>
         <div class="info" id="info">
             <p>1: Em caso de ser mais de um pessoa da sua família convidada, clique em "Adicionar nome" e insira.</p>
-            <p>2: Se desejar escolher mais de um presente basta clicar no botão abaixo "Mais presentes."</p>
+            <p>2: Se desejar escolher mais de um presente basta clicar no botão abaixo "Mais presentes".</p>
             <p>3: Dúvidas entre em contato com Jean Lima tel:[(81) 989092267]</p>
         </div>
+        <p>1ª Confirmação de 15 à 30/10</p>
         <br>
         <div class="container-inputs">
             <label for="nome">Nome</label>
@@ -56,15 +64,16 @@
             <div id="campos-nome-adicionais">
                 <!-- Aqui serão adicionados os campos de nome extras -->
             </div>
-    
+
             <button id="adicionar-nome" class="inputformadc" type="button">Adicionar Nome</button>
         </div>
         <br>
         <div class="container-inputs">
             <label for="email">E-mail</label>
-            <input type="email" id="email" class="inputform" name="email" placeholder="Ex:seuemail@exemplo.com" required>
+            <input type="email" id="email" class="inputform" name="email" placeholder="Ex:seuemail@exemplo.com"
+                required>
         </div>
-        
+
         <br>
         <div class="container-inputs">
             <label for="presente">Presente</label>
@@ -96,7 +105,7 @@
             </div>
             <button id="adicionar-presente" class="inputformadc" type="button">Mais presentes</button>
         </div>
-        
+
         <br>
         <input type="submit" value="Confirmar Presença" class="inputformsubmit">
         <br>
@@ -117,7 +126,8 @@
                     <h2 id="nome">Jogo de panelas antiaderente</h2>
                     <h2 id="valor">R$ 242,90</h2>
                     <br>
-                    <a href="https://mpago.la/2ALB3Kj"><input type="button" value="PRESENTEAR" id="checkout1" class="inputbutton"></a>
+                    <a href="https://mpago.la/2ALB3Kj"><input type="button" value="PRESENTEAR" id="checkout1"
+                            class="inputbutton"></a>
                 </div>
             </div>
             <div class="container-list" id="2">
@@ -128,7 +138,8 @@
                     <h2>Forno Micro-ondas</h2>
                     <h2 id="valor">R$ 569,00</h2>
                     <br>
-                    <a href="https://mpago.la/2b3faG7"><input type="button" value="PRESENTEAR" id="checkout2" class="inputbutton"></a>
+                    <a href="https://mpago.la/2b3faG7"><input type="button" value="PRESENTEAR" id="checkout2"
+                            class="inputbutton"></a>
 
                 </div>
             </div>
@@ -140,10 +151,11 @@
                     <h2>Jogo de panelas</h2>
                     <h2 id="valor">R$ 194,90</h2>
                     <br>
-                    <a href="https://mpago.la/1SFLgr1"><input type="button" value="PRESENTEAR" id="checkout3" class="inputbutton"></a>
+                    <a href="https://mpago.la/1SFLgr1"><input type="button" value="PRESENTEAR" id="checkout3"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="4">
                 <div class="container-imglist">
                     <img src="img/tabuadepassar.jpg" alt="imglista" class="imglista">
@@ -152,10 +164,11 @@
                     <h2>Tábua de passar roupas</h2>
                     <h2 id="valor">R$ 129,90</h2>
                     <br>
-                    <a href="https://mpago.la/2Uy75uT"><input type="button" value="PRESENTEAR" id="checkout4" class="inputbutton"></a>
+                    <a href="https://mpago.la/2Uy75uT"><input type="button" value="PRESENTEAR" id="checkout4"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="5">
                 <div class="container-imglist">
                     <img src="img/ventilador.jpg" alt="imglista" class="imglista">
@@ -164,7 +177,8 @@
                     <h2>Ventilador turbo</h2>
                     <h2 id="valor">R$ 230,00</h2>
                     <br>
-                    <a href="https://mpago.la/2AzApcV"><input type="button" value="PRESENTEAR" id="checkout5" class="inputbutton"></a>
+                    <a href="https://mpago.la/2AzApcV"><input type="button" value="PRESENTEAR" id="checkout5"
+                            class="inputbutton"></a>
                 </div>
             </div>
             <div class="container-list" id="6">
@@ -175,10 +189,11 @@
                     <h2>Aparelho de jantar</h2>
                     <h2 id="valor">R$ 220,00</h2>
                     <br>
-                    <a href="https://mpago.la/1SdmyBF"><input type="button" value="PRESENTEAR" id="checkout6" class="inputbutton"></a>
+                    <a href="https://mpago.la/1SdmyBF"><input type="button" value="PRESENTEAR" id="checkout6"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="7">
                 <div class="container-imglist">
                     <img src="img/poteshermeticos.jpg" alt="imglista" class="imglista">
@@ -187,10 +202,11 @@
                     <h2>Kit potes herméticos</h2>
                     <h2 id="valor">R$ 130,00</h2>
                     <br>
-                    <a href="https://mpago.la/2VfDA5a"><input type="button" value="PRESENTEAR" id="checkout7" class="inputbutton"></a>
+                    <a href="https://mpago.la/2VfDA5a"><input type="button" value="PRESENTEAR" id="checkout7"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="8">
                 <div class="container-imglist">
                     <img src="img/edredom.jpg" alt="imglista" class="imglista">
@@ -199,10 +215,11 @@
                     <h2>Edredom casal</h2>
                     <h2 id="valor">R$ 179,90</h2>
                     <br>
-                    <a href="https://mpago.la/14yL6R8"><input type="button" value="PRESENTEAR" id="checkout8" class="inputbutton"></a>
+                    <a href="https://mpago.la/14yL6R8"><input type="button" value="PRESENTEAR" id="checkout8"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="9">
                 <div class="container-imglist">
                     <img src="img/toalhas.jpg" alt="imglista" class="imglista">
@@ -211,10 +228,11 @@
                     <h2>Jogo de toalhas 5-Pçs</h2>
                     <h2 id="valor">R$ 105,90</h2>
                     <br>
-                   <a href="https://mpago.la/1eNQ64j"><input type="button" value="PRESENTEAR" id="checkout9" class="inputbutton"></a> 
+                    <a href="https://mpago.la/1eNQ64j"><input type="button" value="PRESENTEAR" id="checkout9"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="10">
                 <div class="container-imglist">
                     <img src="img/camacasal.webp" alt="imglista" class="imglista">
@@ -223,10 +241,11 @@
                     <h2>Jogo de cama casal</h2>
                     <h2 id="valor">R$ 128,99</h2>
                     <br>
-                    <a href="https://mpago.la/29tseL8"><input type="button" value="PRESENTEAR" id="checkout10" class="inputbutton"></a>
+                    <a href="https://mpago.la/29tseL8"><input type="button" value="PRESENTEAR" id="checkout10"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="11">
                 <div class="container-imglist">
                     <img src="img/sobremesa.jpg" alt="imglista" class="imglista">
@@ -235,10 +254,11 @@
                     <h2>Jogo de sobremesa</h2>
                     <h2 id="valor">R$ 67,40</h2>
                     <br>
-                   <a href="https://mpago.la/1vPThqX"><input type="button" value="PRESENTEAR" id="checkout11" class="inputbutton"></a> 
+                    <a href="https://mpago.la/1vPThqX"><input type="button" value="PRESENTEAR" id="checkout11"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="12">
                 <div class="container-imglist">
                     <img src="img/descansodepanela.jpg" alt="imglista" class="imglista">
@@ -247,10 +267,12 @@
                     <h2>Jogo descansos de panela 6-Pçs</h2>
                     <h2 id="valor">R$ 59,90</h2>
                     <br>
-                    <a href="https://www.mercadopago.com.br/checkout/v1/redirect?preference-id=753909044-ac3e1f1a-140d-493d-b682-82b7848721bb"><input type="button" value="PRESENTEAR" id="checkout12" class="inputbutton"></a>
+                    <a
+                        href="https://www.mercadopago.com.br/checkout/v1/redirect?preference-id=753909044-ac3e1f1a-140d-493d-b682-82b7848721bb"><input
+                            type="button" value="PRESENTEAR" id="checkout12" class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="13">
                 <div class="container-imglist">
                     <img src="img/jogoamericano.jpg" alt="imglista" class="imglista">
@@ -259,10 +281,11 @@
                     <h2>Jogo americano (sousplat)</h2>
                     <h2 id="valor">R$ 59,00</h2>
                     <br>
-                    <a href="https://mpago.la/22qscxS"><input type="button" value="PRESENTEAR" id="checkout13" class="inputbutton"></a>
+                    <a href="https://mpago.la/22qscxS"><input type="button" value="PRESENTEAR" id="checkout13"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="14">
                 <div class="container-imglist">
                     <img src="img/portacopos.webp" alt="imglista" class="imglista">
@@ -271,10 +294,11 @@
                     <h2>Porta copos de sofá</h2>
                     <h2 id="valor">R$ 39,90</h2>
                     <br>
-                    <a href="https://mpago.la/2t3dnb3"><input type="button" value="PRESENTEAR" id="checkout14" class="inputbutton"></a>
+                    <a href="https://mpago.la/2t3dnb3"><input type="button" value="PRESENTEAR" id="checkout14"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="15">
                 <div class="container-imglist">
                     <img src="img/escorredor.jpg" alt="imglista" class="imglista">
@@ -283,10 +307,11 @@
                     <h2>Escorredor de pratos suspenso</h2>
                     <h2 id="valor">R$ 170,00</h2>
                     <br>
-                    <a href="https://mpago.la/23AWbTK"><input type="button" value="PRESENTEAR" id="checkout15" class="inputbutton"></a>
+                    <a href="https://mpago.la/23AWbTK"><input type="button" value="PRESENTEAR" id="checkout15"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="16">
                 <div class="container-imglist">
                     <img src="img/cesto.webp" alt="imglista" class="imglista">
@@ -295,10 +320,11 @@
                     <h2>Cesto de roupas</h2>
                     <h2 id="valor">R$ 80,00</h2>
                     <br>
-                    <a href="https://mpago.la/1Gdj8tk"><input type="button" value="PRESENTEAR" id="checkout16" class="inputbutton"></a>
+                    <a href="https://mpago.la/1Gdj8tk"><input type="button" value="PRESENTEAR" id="checkout16"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="17">
                 <div class="container-imglist">
                     <img src="img/cafeteira.jpg" alt="imglista" class="imglista">
@@ -307,10 +333,11 @@
                     <h2>Cafeteira expresso de capsulas</h2>
                     <h2 id="valor">R$ 239,00</h2>
                     <br>
-                    <a href="https://mpago.la/14NxRGt"><input type="button" value="PRESENTEAR" id="checkout17" class="inputbutton"></a>
+                    <a href="https://mpago.la/14NxRGt"><input type="button" value="PRESENTEAR" id="checkout17"
+                            class="inputbutton"></a>
                 </div>
             </div>
-            
+
             <div class="container-list" id="18">
                 <div class="container-imglist">
                     <img src="img/aspiradordepó.jpg" alt="imglista" class="imglista">
@@ -319,7 +346,8 @@
                     <h2>Aspirador de pó vertical</h2>
                     <h2 id="valor">R$ 149,90</h2>
                     <br>
-                    <a href="https://mpago.la/1nj6j2X"><input type="button" value="PRESENTEAR" id="checkout18" class="inputbutton"></a>
+                    <a href="https://mpago.la/1nj6j2X"><input type="button" value="PRESENTEAR" id="checkout18"
+                            class="inputbutton"></a>
                 </div>
             </div>
             <div class="container-list" id="19">
@@ -330,7 +358,8 @@
                     <h2>Cortina blackout 200x140cm</h2>
                     <h2 id="valor">R$ 52,90</h2>
                     <br>
-                    <a href="https://mpago.la/28HKe3i"><input type="button" value="PRESENTEAR" id="checkout19" class="inputbutton"></a>
+                    <a href="https://mpago.la/28HKe3i"><input type="button" value="PRESENTEAR" id="checkout19"
+                            class="inputbutton"></a>
                 </div>
             </div>
 
@@ -345,7 +374,36 @@
 
     <script src="JS/script.js"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        // Data-alvo da contagem regressiva (25 de novembro de 2023)
+        const targetDate = new Date('2023-11-25').getTime();
 
+        // Função para atualizar a contagem regressiva
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeRemaining = targetDate - currentDate;
+
+            if (timeRemaining <= 0) {
+                document.getElementById('countdown1').innerHTML = 'Hoje é o grande dia!';
+                document.getElementById('countdown2').innerHTML = 'Hoje é o grande dia!';
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown1').innerHTML = ` Faltam: ${days}d ${hours}h ${minutes}m ${seconds}s <br> para o casamento!`;
+                document.getElementById('countdown2').innerHTML = ` Faltam: ${days}d ${hours}h ${minutes}m ${seconds}s <br> para o casamento!`;
+            }
+        }
+
+        // Atualize a contagem regressiva a cada segundo
+        setInterval(updateCountdown, 1000);
+
+        // Chame a função inicialmente para evitar um atraso inicial
+        updateCountdown();
+    </script>
+    </script>
 </body>
 
 </html>

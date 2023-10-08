@@ -1,8 +1,20 @@
 const botaoMenu = document.querySelector('#botaomenu');
+const botaoMenuIndex = document.querySelector('#botaomenuIn');
 const menuLateral = document.querySelector('#menulateral');
 const menucentral = document.querySelector('.nav-bar');
 const overlay = document.getElementById("overlay");
 const body = document.body;
+
+window.addEventListener('scroll', function () {
+    if (this.window.scrollY > botaoMenuIndex.offsetHeight) {
+        botaoMenuIndex.style.backgroundColor = "transparent";
+        
+    } else {
+        botaoMenuIndex.style.backgroundColor = "#7a7a39";
+        
+    }
+});
+
 botaoMenu.addEventListener('click', function () {
     const menulateral = window.getComputedStyle(menuLateral);
     if (menulateral.display === 'none') {
@@ -15,6 +27,20 @@ botaoMenu.addEventListener('click', function () {
         behavior: 'smooth'
     });
 });
+function abrirmenu(){
+    const menulateral = window.getComputedStyle(menuLateral);
+    if (menulateral.display === 'none') {
+        menuLateral.style.display = 'flex';
+        overlay.style.display = 'block';
+        body.style.overflow = 'hidden';
+    }
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+    
+
 
 function fecharsesair() {
     if (menuLateral.style.display === 'flex') {
@@ -35,10 +61,12 @@ window.addEventListener('scroll', function () {
         botaoMenu.style.backgroundColor = 'transparent';
         menucentral.style.backgroundColor = '#b7b75e34';
         btntelaconfirma.style.backgroundColor = 'transparent';
+        
     } else {
         botaoMenu.style.backgroundColor = '#ffff';
         menucentral.style.backgroundColor = '#b7b75e';
         btntelaconfirma.style.backgroundColor = '#3f3f00';
+        
     }
 });
 
@@ -47,7 +75,7 @@ const btntelaconfirma = document.getElementById("btnconfirmar")
 const fechartelaconfirmação = document.getElementById("fechartelaconfirmação");
 
 btntelaconfirma.addEventListener("click", function () {
-    // Verificar o estado de exibição de telapresença para alterná-lo
+
     if (telapresença.style.display === "none" || telapresença.style.display === "") {
         telapresença.style.display = "inline-block";
         overlay.style.display = 'block';
@@ -65,7 +93,7 @@ btnconfirmarlateral.addEventListener("click", function () {
 });
 
 fechartelaconfirmação.addEventListener("click", function () {
-    // Verificar o estado de exibição de telapresença para alterná-lo
+
     if (telapresença.style.display === "inline-block") {
         telapresença.style.display = "none";
         overlay.style.display = 'none';
@@ -201,4 +229,8 @@ function infobox(){
         info.style.display ="none";
     }
 }
+
+
+
+
 

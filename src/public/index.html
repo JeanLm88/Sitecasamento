@@ -16,29 +16,35 @@
 
 <body>
     <div class="overlay" id="overlay"></div>
-    <div class="container-logo" id="botaomenu" onmouseover = "fecharsesair()">
-        <img src="img/LOGO.png" alt="logo" class="logo">
-        <label for="container-logo" class="label-menu">Menu</label>
+    <div class="container-logoIndex" id="botaomenuIn" onclick="abrirmenu()" onmouseover="fecharsesair()">
+        <img src="img/LOGO-NAV.png" alt="logo" class="logo">
+        <label for="container-logoIndex">Menu</label>
     </div>
     <nav class="nav-bar">
         <a href="index.html"><img src="img/LOGO-NAV.png" alt="logo" class="logo"></a>
         <a href="index.html" class="link-menu">Pagina inicial</a>
         <a href="produtos.html" class="link-menu">Lista de presentes</a>
-        <a href="areapix.html" class="link-menu">Área Pix</a>
+        <a href="areapix.html" class="link-menu">Área Pix ❖</a>
+        <a href="https://maps.app.goo.gl/V9YcwJoDQK1pQGfw8" class="link-menu">Clique aqui para localização</a>
+        <div class="container-contador"><a class="link-menu"><div id="countdown1" class="contador"></div></a></div>
     </nav>
     <nav class="nav-bar2" id="menulateral">
-        <div class="container-fecharmenu"onclick="fecharmenu()">
-            <img src="img/LOGO-NAV.png" alt="logo" class="logo" >
-        <label for="menulateral">Fechar</label>
+        <div class="container-fecharmenu" onclick="fecharmenu()">
+            <img src="img/LOGO.png" alt="logo" class="logo">
+            <label for="menulateral">Fechar</label>
         </div>
-        
+
         <br>
         <a href="index.html" class="link-menu2">Pagina inicial</a>
         <a href="produtos.html" class="link-menu2">Lista de presentes</a>
-        <a href="areapix.html" class="link-menu2">Área Pix</a>
+        <a href="areapix.html" class="link-menu2">Área Pix ❖</a>
+        <a class="link-menu2"><div id="countdown2" class="contador"></div></a>
+        <a href="https://maps.app.goo.gl/V9YcwJoDQK1pQGfw8" class="link-menu2">Clique aqui para localização</a>
+
     </nav>
     <section class="main">
         <h1 class="titulo-central">Você é nosso convidado especial!</h1>
+        <div id="countdown"></div>
         <section class="container-sobrenos">
             <div class="carousel-container">
                 <div class="carousel slide" id="myCarousel">
@@ -98,6 +104,33 @@
             });
 
         });
+        // Data-alvo da contagem regressiva (25 de novembro de 2023)
+        const targetDate = new Date('2023-11-25').getTime();
+
+        // Função para atualizar a contagem regressiva
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeRemaining = targetDate - currentDate;
+
+            if (timeRemaining <= 0) {
+                document.getElementById('countdown1').innerHTML = 'Hoje é o grande dia!';
+                document.getElementById('countdown2').innerHTML = 'Hoje é o grande dia!';
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown1').innerHTML = ` Faltam: ${days}d ${hours}h ${minutes}m ${seconds}s <br> para o casamento!`;
+                document.getElementById('countdown2').innerHTML = ` Faltam: ${days}d ${hours}h ${minutes}m ${seconds}s <br> para o casamento!`;
+            }
+        }
+
+        // Atualize a contagem regressiva a cada segundo
+        setInterval(updateCountdown, 1000);
+
+        // Chame a função inicialmente para evitar um atraso inicial
+        updateCountdown();
     </script>
 
     <script src="JS/script.js"></script>

@@ -24,8 +24,11 @@
         <a href="index.html"><img src="img/LOGO-NAV.png" alt="logo" class="logo"></a>
         <a href="index.html" class="link-menu">Pagina inicial</a>
         <a href="produtos.html" class="link-menu">Lista de presentes</a>
-        <a href="areapix.html" class="link-menu">Área Pix</a>
+        <a href="areapix.html" class="link-menu">Área Pix ❖</a>
         <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmar">
+        <div class="container-contador"><a class="link-menu">
+                <div id="countdown1" class="contador"></div>
+            </a></div>
     </nav>
     <nav class="nav-bar2" id="menulateral">
         <div class="container-fecharmenu" onclick="fecharmenu()">
@@ -36,79 +39,82 @@
         <br>
         <a href="index.html" class="link-menu2">Pagina inicial</a>
         <a href="produtos.html" class="link-menu2">Lista de presentes</a>
-        <a href="areapix.html" class="link-menu2">Área Pix</a>
+        <a href="areapix.html" class="link-menu2">Área Pix ❖</a>
         <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmarlateral">
+        <a class="link-menu2">
+            <div id="countdown2" class="contador"></div>
+        </a>
 
     </nav>
     <div class="bloqueio"></div>
     <br>
-        <form action="https://api.staticforms.xyz/submit" method="post" class="confirmarpresença" id="telaconfirmação">
+    <form action="https://api.staticforms.xyz/submit" method="post" class="confirmarpresença" id="telaconfirmação">
 
-            <h1>CONFIRME SUA PRESENÇA!</h1>
-            <div class="buttoninfo" id="btninfo" onclick="infobox()"><img src="img/info.png"></div>
-            <div class="info" id="info">
-                <p>1: Em caso de ser mais de um pessoa da sua família convidada, clique em "Adicionar nome" e insira.
-                </p>
-                <p>2: Se desejar escolher mais de um presente basta clicar no botão abaixo "Mais presentes."</p>
-                <p>3: Dúvidas entre em contato com Jean Lima tel:[(81) 989092267]</p>
-            </div>
-            <br>
-            <div class="container-inputs">
-                <label for="nome">Nome</label>
-                <input type="text" name="name" class="inputform" placeholder="Digite seu nome" required>
-                <div id="campos-nome-adicionais">
-                    <!-- Aqui serão adicionados os campos de nome extras -->
-                </div>
-
-                <button id="adicionar-nome" class="inputformadc">Adicionar Nome</button>
-            </div>
-            <br>
-            <div class="container-inputs">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" class="inputform" name="email" placeholder="Ex:seuemail@exemplo.com"
-                    required>
+        <h1>CONFIRME SUA PRESENÇA!</h1>
+        <div class="buttoninfo" id="btninfo" onclick="infobox()"><img src="img/info.png"></div>
+        <div class="info" id="info">
+            <p>1: Em caso de ser mais de um pessoa da sua família convidada, clique em "Adicionar nome" e insira.
+            </p>
+            <p>2: Se desejar escolher mais de um presente basta clicar no botão abaixo "Mais presentes".</p>
+            <p>3: Dúvidas entre em contato com Jean Lima tel:[(81) 989092267]</p>
+        </div>
+        <br>
+        <div class="container-inputs">
+            <label for="nome">Nome</label>
+            <input type="text" name="name" class="inputform" placeholder="Digite seu nome" required>
+            <div id="campos-nome-adicionais">
+                <!-- Aqui serão adicionados os campos de nome extras -->
             </div>
 
-            <br>
-            <div class="container-inputs">
-                <label for="presente">Presente</label>
-                <select id="escolha-presente" name="message" class="inputform" required>
-                    <option value="">Escolha um presente</option>
-                    <option value="Pix">Pix</option>
-                    <option value="Jogo de panelas">Jogo de panelas</option>
-                    <option value="Aparelho de jantar">Aparelho de jantar</option>
-                    <option value="Kit Potes herméticos">Kit Potes herméticos</option>
-                    <option value="Edredom">Edredom</option>
-                    <option value="Jogo de toalhas">Jogo de toalhas</option>
-                    <option value="Jogo de cama casal">Jogo de cama casal</option>
-                    <option value="Jogo de sobremesa">Jogo de sobremesa</option>
-                    <option value="Tábua de passar roupa">Tábua de passar roupa</option>
-                    <option value="Jogo de descanso de panelas">Jogo de descanso de panelas</option>
-                    <option value="Jogo americano (sousplat)">Jogo americano (sousplat)</option>
-                    <option value="Porta copos de sofá">Porta copos de sofá</option>
-                    <option value="Jogo de panelas antiaderente">Jogo de panelas antiaderente</option>
-                    <option value="Escorredor de pratos">Escorredor de pratos</option>
-                    <option value="Cesto de roupa">Cesto de roupa</option>
-                    <option value="Ventilador">Ventilador</option>
-                    <option value="Cafeteira expresso de cápsulas">Cafeteira expresso de cápsulas</option>
-                    <option value="Micro-ondas">Micro-ondas</option>
-                    <option value="Aspirador de pó">Aspirador de pó</option>
-                    <option value="Cortina blackout">Cortina blackout</option>
-                </select>
-                <div id="campos-presentes-adicionais">
-                    <!-- Aqui serão adicionados os campos de nome extras -->
-                </div>
-                <button id="adicionar-presente" class="inputformadc">Mais presentes</button>
-            </div>
+            <button id="adicionar-nome" class="inputformadc">Adicionar Nome</button>
+        </div>
+        <br>
+        <div class="container-inputs">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" class="inputform" name="email" placeholder="Ex:seuemail@exemplo.com"
+                required>
+        </div>
 
-            <br>
-            <input type="submit" value="Confirmar Presença" class="inputformsubmit">
-            <br>
-            <br>
-            <button id="fechartelaconfirmação" class="btnfechar"><img src="img/fechar.png"></button>
-            <input type="hidden" name="redirectTo" value="http://localhost:3000/agradecimento.html">
-            <input type="hidden" name="accessKey" value="a5357ae2-6c75-467f-a75e-d377094b7733">
-        </form>
+        <br>
+        <div class="container-inputs">
+            <label for="presente">Presente</label>
+            <select id="escolha-presente" name="message" class="inputform" required>
+                <option value="">Escolha um presente</option>
+                <option value="Pix">Pix</option>
+                <option value="Jogo de panelas">Jogo de panelas</option>
+                <option value="Aparelho de jantar">Aparelho de jantar</option>
+                <option value="Kit Potes herméticos">Kit Potes herméticos</option>
+                <option value="Edredom">Edredom</option>
+                <option value="Jogo de toalhas">Jogo de toalhas</option>
+                <option value="Jogo de cama casal">Jogo de cama casal</option>
+                <option value="Jogo de sobremesa">Jogo de sobremesa</option>
+                <option value="Tábua de passar roupa">Tábua de passar roupa</option>
+                <option value="Jogo de descanso de panelas">Jogo de descanso de panelas</option>
+                <option value="Jogo americano (sousplat)">Jogo americano (sousplat)</option>
+                <option value="Porta copos de sofá">Porta copos de sofá</option>
+                <option value="Jogo de panelas antiaderente">Jogo de panelas antiaderente</option>
+                <option value="Escorredor de pratos">Escorredor de pratos</option>
+                <option value="Cesto de roupa">Cesto de roupa</option>
+                <option value="Ventilador">Ventilador</option>
+                <option value="Cafeteira expresso de cápsulas">Cafeteira expresso de cápsulas</option>
+                <option value="Micro-ondas">Micro-ondas</option>
+                <option value="Aspirador de pó">Aspirador de pó</option>
+                <option value="Cortina blackout">Cortina blackout</option>
+            </select>
+            <div id="campos-presentes-adicionais">
+                <!-- Aqui serão adicionados os campos de nome extras -->
+            </div>
+            <button id="adicionar-presente" class="inputformadc">Mais presentes</button>
+        </div>
+
+        <br>
+        <input type="submit" value="Confirmar Presença" class="inputformsubmit">
+        <br>
+        <br>
+        <button id="fechartelaconfirmação" class="btnfechar"><img src="img/fechar.png"></button>
+        <input type="hidden" name="redirectTo" value="http://localhost:3000/agradecimento.html">
+        <input type="hidden" name="accessKey" value="a5357ae2-6c75-467f-a75e-d377094b7733">
+    </form>
     <section class="main">
 
         <h1 class="titulo-central">ÁREA PIX ❖</h1>
@@ -137,7 +143,8 @@
                     <h2>R$ 120,00</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/vQC1J0lbYS" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/vQC1J0lbYS" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -151,7 +158,8 @@
                     <h2 id="valor">R$ 90,00</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/V1R463Mq7F" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/V1R463Mq7F" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
                 </div>
             </div>
@@ -165,7 +173,8 @@
                     <h2 id="valor">R$ 70,00</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/hqql0iW9b2" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/hqql0iW9b2" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -180,7 +189,8 @@
                     <h2 id="valor">R$ 75,00</h2>
                     <br>
                     <div class="container-botao">
-                       <a href="https://nubank.com.br/pagar/105j6h/7sDQMR7ivu" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a> 
+                        <a href="https://nubank.com.br/pagar/105j6h/7sDQMR7ivu" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -194,7 +204,8 @@
                     <h2 id="valor">R$ 80,00</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/a9Pj2Xdtoz" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/a9Pj2Xdtoz" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -209,7 +220,8 @@
                     <h2 id="valor">R$ 85,00</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/JzDPgBoDo8" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/JzDPgBoDo8" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -224,7 +236,8 @@
                     <h2 id="valor">R$ 500,00</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/yS6njGDAQN" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/yS6njGDAQN" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -239,7 +252,8 @@
                     <h2 id="valor">R$ 124,90</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/zMezlE7P4h" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/zMezlE7P4h" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -254,7 +268,8 @@
                     <h2 id="valor">R$ 95,00</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/DnoZjgBiKn" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/DnoZjgBiKn" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -269,7 +284,8 @@
                     <h2 id="valor">R$ 200,00</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/GUsCwzAMzU" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/GUsCwzAMzU" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -283,7 +299,8 @@
                     <h2 id="valor">R$ 315,98</h2>
                     <br>
                     <div class="container-botao">
-                        <a href="https://nubank.com.br/pagar/105j6h/doUTs9XL4V" target="_blank"><input type="button" value="PRESENTEAR" class="inputbutton"></a>
+                        <a href="https://nubank.com.br/pagar/105j6h/doUTs9XL4V" target="_blank"><input type="button"
+                                value="PRESENTEAR" class="inputbutton"></a>
                     </div>
 
                 </div>
@@ -300,6 +317,36 @@
 
     <script src="JS/script.js"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        // Data-alvo da contagem regressiva (25 de novembro de 2023)
+        const targetDate = new Date('2023-11-25').getTime();
+
+        // Função para atualizar a contagem regressiva
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeRemaining = targetDate - currentDate;
+
+            if (timeRemaining <= 0) {
+                document.getElementById('countdown1').innerHTML = 'Hoje é o grande dia!';
+                document.getElementById('countdown2').innerHTML = 'Hoje é o grande dia!';
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown1').innerHTML = ` Faltam: ${days}d ${hours}h ${minutes}m ${seconds}s <br> para o casamento!`;
+                document.getElementById('countdown2').innerHTML = ` Faltam: ${days}d ${hours}h ${minutes}m ${seconds}s <br> para o casamento!`;
+            }
+        }
+
+        // Atualize a contagem regressiva a cada segundo
+        setInterval(updateCountdown, 1000);
+
+        // Chame a função inicialmente para evitar um atraso inicial
+        updateCountdown();
+    </script>
+    </script>
 
 </body>
 
