@@ -325,7 +325,19 @@ footer {
 
 }
 
-/**destinada a tela inicial**/
+.container-buttonfechar{
+    width: 50%;
+    display: inline-flex;
+    align-items: start;
+}
+.container-infoebtnfechar{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 
 .confirmarpresença {
     background-color: white;
@@ -336,8 +348,8 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 99;
-    width: 350px;
-    height: 570px;
+    width: 330px;
+    max-height: 570px;
     margin-top: 15px;
     text-align: center;
     border-radius: 10px;

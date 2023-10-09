@@ -49,16 +49,25 @@
     <div class="bloqueio"></div>
     <br>
     <form action="https://api.staticforms.xyz/submit" method="post" class="confirmarpresença" id="telaconfirmação">
-
-        <h1>CONFIRME SUA PRESENÇA!</h1>
-        <div class="buttoninfo" id="btninfo" onclick="infobox()"><img src="img/info.png"></div>
+        <section class="container-infoebtnfechar">
+            <div class="container-buttonfechar"><button id="fechartelaconfirmação" class="btnfechar"><img
+                        src="img/fechar.png"></button></div>
+            <div class="buttoninfo" id="btninfo" onclick="infobox()"><img src="img/info.png"></div>
+        </section>
         <div class="info" id="info">
             <p>1: Em caso de ser mais de um pessoa da sua família convidada, clique em "Adicionar nome" e insira.
             </p>
             <p>2: Se desejar escolher mais de um presente basta clicar no botão abaixo "Mais presentes".</p>
             <p>3: Dúvidas entre em contato com Jean Lima tel:[(81) 989092267]</p>
         </div>
+        <h1>CONFIRME SUA PRESENÇA!</h1>
         <p>1ª Confirmação de 15 à 30/10</p>
+        <br>
+        <input type="checkbox" name="message" id="checkbox1" value="Comprar aqui no site"><label for="checkbox1">Comprar
+            aqui no site</label><br>
+        <input type="checkbox" name="message" id="checkbox2" value="Comprar em outro lugar"><label
+            for="checkbox2">Comprar em outro lugar</label>
+        <br>
         <br>
         <div class="container-inputs">
             <label for="nome">Nome</label>
@@ -112,7 +121,7 @@
         <input type="submit" value="Confirmar Presença" class="inputformsubmit">
         <br>
         <br>
-        <button id="fechartelaconfirmação" class="btnfechar"><img src="img/fechar.png"></button>
+
         <input type="hidden" name="redirectTo" value="http://localhost:3000/agradecimento.html">
         <input type="hidden" name="accessKey" value="a5357ae2-6c75-467f-a75e-d377094b7733">
     </form>

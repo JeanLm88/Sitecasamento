@@ -234,3 +234,18 @@ function infobox(){
 
 
 
+const checkbox1 = document.querySelector('#checkbox1');
+const checkbox2 = document.querySelector('#checkbox2');
+
+checkbox1.addEventListener('change', function(){
+    if(checkbox1.checked){
+        checkbox2.checked = false;
+    }
+
+});
+checkbox2.addEventListener('change', function(){
+    if(checkbox2.checked){
+        checkbox1.checked = false;
+    }
+
+});
