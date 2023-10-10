@@ -276,7 +276,6 @@ footer {
         z-index: 999;
         background-color: #b7b75e;
         display: none;
-        justify-content: stretch;
         flex-direction: column;
         position: absolute;
 

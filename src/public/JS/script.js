@@ -8,38 +8,45 @@ const body = document.body;
 window.addEventListener('scroll', function () {
     if (this.window.scrollY > botaoMenuIndex.offsetHeight) {
         botaoMenuIndex.style.backgroundColor = "transparent";
-        
+        botaoMenuIndex.style.color = "#7a7a39";
+
     } else {
         botaoMenuIndex.style.backgroundColor = "#7a7a39";
-        
+        botaoMenuIndex.style.color = "#fff"
     }
 });
 
 botaoMenu.addEventListener('click', function () {
     const menulateral = window.getComputedStyle(menuLateral);
     if (menulateral.display === 'none') {
+        // Calcula a posição atual da janela
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        
+        // Ajusta a posição do menu com base na posição atual
+        menuLateral.style.top = `${scrollTop}px`;
+        
+        // Abre o menu
         menuLateral.style.display = 'flex';
         overlay.style.display = 'block';
         body.style.overflow = 'hidden';
     }
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 });
 function abrirmenu(){
     const menulateral = window.getComputedStyle(menuLateral);
     if (menulateral.display === 'none') {
+        // Calcula a posição atual da janela
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        
+        // Ajusta a posição do menu com base na posição atual
+        menuLateral.style.top = `${scrollTop}px`;
+        
+        // Abre o menu
         menuLateral.style.display = 'flex';
         overlay.style.display = 'block';
         body.style.overflow = 'hidden';
     }
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-    
+};
+
 
 
 function fecharsesair() {
@@ -61,12 +68,12 @@ window.addEventListener('scroll', function () {
         botaoMenu.style.backgroundColor = 'transparent';
         menucentral.style.backgroundColor = '#b7b75e34';
         btntelaconfirma.style.backgroundColor = 'transparent';
-        
+
     } else {
         botaoMenu.style.backgroundColor = '#ffff';
         menucentral.style.backgroundColor = '#b7b75e';
         btntelaconfirma.style.backgroundColor = '#3f3f00';
-        
+
     }
 });
 
@@ -111,8 +118,8 @@ fechartelaconfirmação.addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const camposNomeAdicionais = document.getElementById("campos-nome-adicionais");
     const adicionarNomeButton = document.getElementById("adicionar-nome");
- 
-   
+
+
     let contadorCampos = 0;
     adicionarNomeButton.addEventListener("click", function () {
 
@@ -146,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
             novoselectpresente.id = "escolha-presente";
             novoselectpresente.required = true;
             novoselectpresente.style.marginBottom = "3px";
-            
+
 
             // Adicione todas as opções
             const opcoes = [
@@ -186,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    
+
 
     function fecharInfo() {
         var overlay = document.getElementById('overlay');
@@ -196,21 +203,21 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.style.display = 'none'; // Oculta o overlay
     }
 
-   function criarManipuladorCheckout(numero) {
-    return async function () {
-        const resposta = await fetch(`/create-order${numero}`, {
-            method: "POST",
-        });
-        const data = await resposta.json();
-        console.log(data);
-        window.location.href = data.init_point;
-    };
-}
+    function criarManipuladorCheckout(numero) {
+        return async function () {
+            const resposta = await fetch(`/create-order${numero}`, {
+                method: "POST",
+            });
+            const data = await resposta.json();
+            console.log(data);
+            window.location.href = data.init_point;
+        };
+    }
 
-for (let i = 1; i <= 19; i++) {
-    const checkout = document.getElementById(`checkout${i}`);
-    checkout.addEventListener("click", criarManipuladorCheckout(i));
-}
+    for (let i = 1; i <= 19; i++) {
+        const checkout = document.getElementById(`checkout${i}`);
+        checkout.addEventListener("click", criarManipuladorCheckout(i));
+    }
 
 
 
@@ -223,11 +230,11 @@ for (let i = 1; i <= 19; i++) {
 const btninfo = document.getElementById("btninfo");
 const info = document.getElementById("info");
 
-function infobox(){
-    if(info.style.display ==="none" || info.style.display ==="" ){
-        info.style.display ="flex";
-    }else{
-        info.style.display ="none";
+function infobox() {
+    if (info.style.display === "none" || info.style.display === "") {
+        info.style.display = "flex";
+    } else {
+        info.style.display = "none";
     }
 }
 
@@ -238,14 +245,14 @@ function infobox(){
 const checkbox1 = document.querySelector('#checkbox1');
 const checkbox2 = document.querySelector('#checkbox2');
 
-checkbox1.addEventListener('change', function(){
-    if(checkbox1.checked){
+checkbox1.addEventListener('change', function () {
+    if (checkbox1.checked) {
         checkbox2.checked = false;
     }
 
 });
-checkbox2.addEventListener('change', function(){
-    if(checkbox2.checked){
+checkbox2.addEventListener('change', function () {
+    if (checkbox2.checked) {
         checkbox1.checked = false;
     }
 
