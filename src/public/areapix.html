@@ -55,8 +55,7 @@
             <div class="buttoninfo" id="btninfo" onclick="infobox()"><img src="img/info.png"></div>
         </section>
         <div class="info" id="info">
-            <p>1: Em caso de ser mais de um pessoa da sua família convidada, clique em "Adicionar nome" e insira.
-            </p>
+            <p>1: Em caso de ser mais de um pessoa da sua família convidada, clique em "Adicionar nome" e insira.</p>
             <p>2: Se desejar escolher mais de um presente basta clicar no botão abaixo "Mais presentes".</p>
             <p>3: Dúvidas entre em contato com Jean Lima tel:[(81) 989092267]</p>
         </div>
@@ -76,7 +75,7 @@
                 <!-- Aqui serão adicionados os campos de nome extras -->
             </div>
 
-            <button id="adicionar-nome" class="inputformadc">Adicionar Nome</button>
+            <button id="adicionar-nome" class="inputformadc" type="button">Adicionar Nome</button>
         </div>
         <br>
         <div class="container-inputs">
@@ -114,15 +113,14 @@
             <div id="campos-presentes-adicionais">
                 <!-- Aqui serão adicionados os campos de nome extras -->
             </div>
-            <button id="adicionar-presente" class="inputformadc">Mais presentes</button>
+            <button id="adicionar-presente" class="inputformadc" type="button">Mais presentes</button>
         </div>
 
         <br>
         <input type="submit" value="Confirmar Presença" class="inputformsubmit">
         <br>
         <br>
-
-        <input type="hidden" name="redirectTo" value="http://localhost:3000/agradecimento.html">
+        <input type="hidden" name="redirectTo" value="https://listadepresentesbj.netlify.app/agradecimento.html">
         <input type="hidden" name="accessKey" value="a5357ae2-6c75-467f-a75e-d377094b7733">
     </form>
     <section class="main">
@@ -355,7 +353,6 @@
 
         // Chame a função inicialmente para evitar um atraso inicial
         updateCountdown();
-    </script>
     </script>
 
 </body>

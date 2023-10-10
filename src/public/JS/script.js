@@ -146,10 +146,11 @@ document.addEventListener("DOMContentLoaded", function () {
             novoselectpresente.id = "escolha-presente";
             novoselectpresente.required = true;
             novoselectpresente.style.marginBottom = "3px";
+            
 
             // Adicione todas as opções
             const opcoes = [
-                "Escolha um presente",
+                "",
                 "Pix",
                 "Jogo de panelas",
                 "Aparelho de jantar",
@@ -185,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
+    
 
     function fecharInfo() {
         var overlay = document.getElementById('overlay');
