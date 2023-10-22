@@ -236,11 +236,9 @@ a:hover {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
-        /* Sobreposição transparente */
         display: none;
-        /* Inicialmente oculta */
         z-index: 99;
-        /* Coloque a sobreposição acima de outros elementos */
+       
     }
 
     .nav-bar2 {

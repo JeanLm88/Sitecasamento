@@ -129,12 +129,24 @@ a:hover {
     height: 230px;
     overflow: hidden;
     background-color: transparent;
+    
+    
 }
+.esgotado{
+    filter: grayscale();
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
 
 .imglista {
     width: 100%;
     height: 100%;
     transition: transform 0.2s ease-in-out;
+    
 }
 
 .container-imglist:hover img {
@@ -482,4 +494,16 @@ footer {
     width: 200px;
     margin-left: 20px;
     margin-bottom: 5px;
+}
+
+.container-esgotado {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    z-index: 90;
+    position: sticky;
+    background-color: #f00000;
+    color: #ffffff;
+    transform: rotate(45deg);
+    transform-origin: left bottom; 
 }
