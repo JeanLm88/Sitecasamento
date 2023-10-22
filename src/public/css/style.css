@@ -267,7 +267,7 @@ footer {
 
     .container-logo {
         display: inline-flex;
-        z-index: 0;
+        z-index: 1;
         position: fixed;
     }
 
