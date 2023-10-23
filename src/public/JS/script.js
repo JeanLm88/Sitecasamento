@@ -168,7 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Jogo de sobremesa",
                 "Tábua de passar roupa",
                 "Jogo de descanso de panelas",
-                "Jogo americano (sousplat)",
                 "Jogo de panelas antiaderente",
                 "Escorredor de pratos",
                 "Cesto de roupa",
