@@ -23,7 +23,7 @@
     <nav class="nav-bar">
         <a href="index.html"><img src="img/LOGO-NAV.png" alt="logo" class="logo"></a>
         <a href="index.html" class="link-menu">Pagina inicial</a>
-        <a href="produtos.html" class="link-menu">Lista de presentes</a>
+        <a href="listadepresentes.html" class="link-menu">Lista de presentes</a>
         <a href="areapix.html" class="link-menu">Área Pix ❖</a>
         <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmar">
         <div class="container-contador"><a class="link-menu">
@@ -38,7 +38,7 @@
 
         <br>
         <a href="index.html" class="link-menu2">Pagina inicial</a>
-        <a href="produtos.html" class="link-menu2">Lista de presentes</a>
+        <a href="listadepresentes.html" class="link-menu2">Lista de presentes</a>
         <a href="areapix.html" class="link-menu2">Área Pix ❖</a>
         <input type="button" value="✅Check-in" class="btnconfirmar" id="btnconfirmarlateral">
         <a class="link-menu2">
@@ -115,7 +115,7 @@
         </div>
 
         <br>
-        <input type="submit" value="Confirmar Presença" class="inputformsubmit">
+        <input type="submit" value="Confirmar Presença" class="inputformsubmit" id="confirmarpresença">
         <br>
         <br>
         <input type="hidden" name="redirectTo" value="https://listadepresentesbj.netlify.app/agradecimento.html">
@@ -323,7 +323,54 @@
 
     <script src="JS/script.js"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
+        const btnsubmit = document.getElementById('confirmarpresença');
+            btnsubmit.addEventListener('click', function () {
+            const email = document.querySelector('#email').value;
+            const nome = document.querySelector('input[name="name"]').value;
+            const presenteescolhidos = document.querySelectorAll('select[name="message"]');
+            const link = 'https://listadepresentesbj.netlify.app/listadepresentes';
+
+            let presentesSelecionados = [];
+
+            presenteescolhidos.forEach(function (select) {
+                const opcoesSelecionadas = select.selectedOptions;
+                let presentesCampo = [];
+
+                for (let i = 0; i < opcoesSelecionadas.length; i++) {
+                    presentesCampo.push(opcoesSelecionadas[i].value);
+                }
+
+                presentesSelecionados.push(presentesCampo);
+            });
+
+            const mensagem = `Presente(s) escolhido(s):\n${presentesSelecionados.map(presentes => presentes.join(', ')).join('\n')}\nAcesse nosso site e efetue a compra: ${link}`;
+
+
+
+            emailjs.init('R_rmhXYI1TDccG0ek');
+
+
+            var emailData = {
+                service_id: 'service_iv8hpeb',
+                template_id: 'template_pmsulah',
+                user_id: 'R_rmhXYI1TDccG0ek',
+                template_params: {
+                    to_name: nome,
+                    to_email: email,
+                    message: mensagem
+                },
+            };
+
+            emailjs.send(emailData.service_id, emailData.template_id, emailData.template_params)
+                .then(function (response) {
+                    console.log('Email enviado com sucesso:', response);
+                }, function (error) {
+                    console.error('Erro ao enviar o email:', error);
+                });
+
+        });
         // Data-alvo da contagem regressiva (25 de novembro de 2023)
         const targetDate = new Date('2023-11-25').getTime();
 

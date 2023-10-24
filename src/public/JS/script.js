@@ -21,25 +21,25 @@ botaoMenu.addEventListener('click', function () {
     if (menulateral.display === 'none') {
         // Calcula a posição atual da janela
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        
+
         // Ajusta a posição do menu com base na posição atual
         menuLateral.style.top = `${scrollTop}px`;
-        
+
         // Abre o menu
         menuLateral.style.display = 'flex';
         overlay.style.display = 'block';
         body.style.overflow = 'hidden';
     }
 });
-function abrirmenu(){
+function abrirmenu() {
     const menulateral = window.getComputedStyle(menuLateral);
     if (menulateral.display === 'none') {
         // Calcula a posição atual da janela
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        
+
         // Ajusta a posição do menu com base na posição atual
         menuLateral.style.top = `${scrollTop}px`;
-        
+
         // Abre o menu
         menuLateral.style.display = 'flex';
         overlay.style.display = 'block';

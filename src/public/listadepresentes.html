@@ -115,7 +115,7 @@
         </div>
 
         <br>
-        <input type="submit" value="Confirmar Presença" class="inputformsubmit">
+        <input type="submit" value="Confirmar Presença" class="inputformsubmit" id="confirmarpresença">
         <br>
         <br>
         <input type="hidden" name="redirectTo" value="https://listadepresentesbj.netlify.app/agradecimento.html">
@@ -291,7 +291,7 @@
                     <div class="texto-list">
                         <h2>Jogo americano (sousplat)</h2>
                         <h2 id="valor">R$ 59,00</h2>
-                     
+
                     </div>
                 </div>
                 <a href="https://mpago.la/22qscxS"><input type="button" value="PRESENTEAR" id="checkout13"
@@ -393,11 +393,58 @@
 
     <script src="JS/script.js"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        // Data-alvo da contagem regressiva (25 de novembro de 2023)
+        const btnsubmit = document.getElementById('confirmarpresença');
+        btnsubmit.addEventListener('click', function () {
+            const email = document.querySelector('#email').value;
+            const nome = document.querySelector('input[name="name"]').value;
+            const presenteescolhidos = document.querySelectorAll('select[name="message"]');
+            const link = 'https://listadepresentesbj.netlify.app/listadepresentes';
+
+            let presentesSelecionados = [];
+
+            presenteescolhidos.forEach(function (select) {
+                const opcoesSelecionadas = select.selectedOptions;
+                let presentesCampo = [];
+
+                for (let i = 0; i < opcoesSelecionadas.length; i++) {
+                    presentesCampo.push(opcoesSelecionadas[i].value);
+                }
+
+                presentesSelecionados.push(presentesCampo);
+            });
+
+            const mensagem = `Presente(s) escolhido(s):\n${presentesSelecionados.map(presentes => presentes.join(', ')).join('\n')}\nAcesse nosso site e efetue a compra: ${link}`;
+
+
+            
+            emailjs.init('R_rmhXYI1TDccG0ek'); 
+
+         
+            var emailData = {
+                service_id: 'service_iv8hpeb', 
+                template_id: 'template_pmsulah',
+                user_id: 'R_rmhXYI1TDccG0ek', 
+                template_params: {
+                    to_name: nome,
+                    to_email: email,
+                    message: mensagem
+                },
+            };
+           
+            emailjs.send(emailData.service_id, emailData.template_id, emailData.template_params)
+                .then(function (response) {
+                    console.log('Email enviado com sucesso:', response);
+                }, function (error) {
+                    console.error('Erro ao enviar o email:', error);
+                });
+
+        });
+        
         const targetDate = new Date('2023-11-25').getTime();
 
-        // Função para atualizar a contagem regressiva
+        
         function updateCountdown() {
             const currentDate = new Date().getTime();
             const timeRemaining = targetDate - currentDate;
@@ -416,13 +463,13 @@
             }
         }
 
-        // Atualize a contagem regressiva a cada segundo
+        
         setInterval(updateCountdown, 1000);
 
-        // Chame a função inicialmente para evitar um atraso inicial
+        
         updateCountdown();
     </script>
-    </script>
+
 </body>
 
 </html>
