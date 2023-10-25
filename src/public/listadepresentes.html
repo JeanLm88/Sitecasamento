@@ -417,28 +417,35 @@
 
             const mensagem = `Presente(s) escolhido(s):\n${presentesSelecionados.map(presentes => presentes.join(', ')).join('\n')}\nAcesse nosso site e efetue a compra: ${link}`;
 
-
-            
             emailjs.init('R_rmhXYI1TDccG0ek'); 
 
-         
             var emailData = {
-                service_id: 'service_iv8hpeb', 
+                service_id1: 'service_iv8hpeb',
+                service_id2: 'service_3y6ub7k',
                 template_id: 'template_pmsulah',
-                user_id: 'R_rmhXYI1TDccG0ek', 
+                user_id: 'R_rmhXYI1TDccG0ek',
                 template_params: {
                     to_name: nome,
                     to_email: email,
                     message: mensagem
                 },
             };
-           
-            emailjs.send(emailData.service_id, emailData.template_id, emailData.template_params)
+            if (email.includes('@gmail.com')) {
+                emailjs.send(emailData.service_id1, emailData.template_id, emailData.template_params)
                 .then(function (response) {
                     console.log('Email enviado com sucesso:', response);
                 }, function (error) {
                     console.error('Erro ao enviar o email:', error);
                 });
+            } else {
+                emailjs.send(emailData.service_id2, emailData.template_id, emailData.template_params)
+                .then(function (response) {
+                    console.log('Email enviado com sucesso:', response);
+                }, function (error) {
+                    console.error('Erro ao enviar o email:', error);
+                });
+
+            }
 
         });
         
