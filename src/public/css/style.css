@@ -508,3 +508,10 @@ footer {
     transform: rotate(40deg);
     transform-origin: left bottom; 
 }
+
+.container-checkbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

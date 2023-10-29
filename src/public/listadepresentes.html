@@ -62,12 +62,6 @@
         <h1>CONFIRME SUA PRESENÇA!</h1>
         <p>1ª Confirmação de 15 à 30/10</p>
         <br>
-        <input type="checkbox" name="message" id="checkbox1" value="Comprar aqui no site"><label for="checkbox1">Comprar
-            aqui no site</label><br>
-        <input type="checkbox" name="message" id="checkbox2" value="Comprar em outro lugar"><label
-            for="checkbox2">Comprar em outro lugar</label>
-        <br>
-        <br>
         <div class="container-inputs">
             <label for="nome">Nome</label>
             <input type="text" name="name" class="inputform" placeholder="Digite seu nome" required>
@@ -113,10 +107,15 @@
             </div>
             <button id="adicionar-presente" class="inputformadc" type="button">Mais presentes</button>
         </div>
-
+        <br>
+        <label for="checkbox1"><input type="checkbox" name="message" id="checkbox1" value="Comprar aqui no site">Comprar
+            aqui no site</label><br>
+            
+        <label for="checkbox2"><input type="checkbox" name="message" id="checkbox2"
+                value="Comprar em outro lugar">Comprar em outro lugar</label>
+        <br>
         <br>
         <input type="submit" value="Confirmar Presença" class="inputformsubmit" id="confirmarpresença">
-        <br>
         <br>
         <input type="hidden" name="redirectTo" value="https://listadepresentesbj.netlify.app/agradecimento.html">
         <input type="hidden" name="accessKey" value="fd82a92e-9ff9-49e0-8a84-8da786ee627d">
