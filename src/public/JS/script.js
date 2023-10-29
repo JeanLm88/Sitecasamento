@@ -255,3 +255,97 @@ checkbox2.addEventListener('change', function () {
     }
 
 });
+
+
+const btnsubmit = document.getElementById('confirmarpresença');
+btnsubmit.addEventListener('click', function () {
+
+    const email = document.querySelector('#email').value;
+    const nome = document.querySelector('input[name="name"]').value;
+    const presenteescolhidos = document.querySelectorAll('select[name="message"]');
+    const link = 'https://listadepresentesbj.netlify.app/listadepresentes';
+
+    let presentesSelecionados = [];
+
+    presenteescolhidos.forEach(function (select) {
+        const opcoesSelecionadas = select.selectedOptions;
+        let presentesCampo = [];
+
+        for (let i = 0; i < opcoesSelecionadas.length; i++) {
+            presentesCampo.push(opcoesSelecionadas[i].value);
+        }
+
+        presentesSelecionados.push(presentesCampo);
+    });
+
+    const mensagem = `Presente(s) escolhido(s):\n${presentesSelecionados.map(presentes => presentes.join(', ')).join('\n')}\nAcesse nosso site e efetue a compra: ${link}`;
+
+
+
+    emailjs.init('R_rmhXYI1TDccG0ek');
+
+
+    var emailData = {
+        service_id1: 'service_iv8hpeb',
+        service_id2: 'service_3y6ub7k',
+        template_id: 'template_pmsulah',
+        user_id: 'R_rmhXYI1TDccG0ek',
+        template_params: {
+            to_name: nome,
+            to_email: email,
+            message: mensagem
+        },
+    };
+    if (email.includes('@gmail.com')) {
+
+            emailjs.send(emailData.service_id1, emailData.template_id, emailData.template_params)
+            .then(function (response) {
+                console.log('Email enviado com sucesso:', response);
+            }, function (error) {
+                console.error('Erro ao enviar o email:', error);
+            });
+        
+    } else {
+     
+            emailjs.send(emailData.service_id2, emailData.template_id, emailData.template_params)
+            .then(function (response) {
+                console.log('Email enviado com sucesso:', response);
+            }, function (error) {
+                console.error('Erro ao enviar o email:', error);
+            });     
+
+    }
+
+
+
+});
+
+
+
+const targetDate = new Date('2023-11-25').getTime();
+
+        
+function updateCountdown() {
+    const currentDate = new Date().getTime();
+    const timeRemaining = targetDate - currentDate;
+
+    if (timeRemaining <= 0) {
+        document.getElementById('countdown1').innerHTML = 'Hoje é o grande dia!';
+        document.getElementById('countdown2').innerHTML = 'Hoje é o grande dia!';
+    } else {
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown1').innerHTML = ` Faltam: ${days}d ${hours}h ${minutes}m ${seconds}s <br> para o casamento!`;
+        document.getElementById('countdown2').innerHTML = ` Faltam: ${days}d ${hours}h ${minutes}m ${seconds}s <br> para o casamento!`;
+    }
+}
+
+
+setInterval(updateCountdown, 1000);
+
+
+updateCountdown();
+
