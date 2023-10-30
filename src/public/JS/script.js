@@ -258,13 +258,24 @@ checkbox2.addEventListener('change', function () {
 
 
 const btnsubmit = document.getElementById('confirmarpresença');
-btnsubmit.addEventListener('click', function () {
-
+btnsubmit.addEventListener('click', function (event) {
+    if (!checkbox1.checked && !checkbox2.checked) {
+        event.preventDefault();
+        alert('Selecione se vai comprar aqui no site ou em outro lugar.');
+        return;
+    }
+    const selectElement = document.querySelector('#escolha-presente');
+    if (selectElement.selectedIndex === 0) {
+        event.preventDefault();
+        alert('Selecione um presente.');
+        return;
+    }
+    
     const email = document.querySelector('#email').value;
     const nome = document.querySelector('input[name="name"]').value;
     const presenteescolhidos = document.querySelectorAll('select[name="message"]');
-    const link = 'https://listadepresentesbj.netlify.app/listadepresentes';
-
+    const link1 = 'https://listadepresentesbj.netlify.app/listadepresentes';
+    const link2 = 'https://listadepresentesbj.netlify.app/areapix.html';
     let presentesSelecionados = [];
 
     presenteescolhidos.forEach(function (select) {
@@ -278,14 +289,24 @@ btnsubmit.addEventListener('click', function () {
         presentesSelecionados.push(presentesCampo);
     });
 
-    const mensagem = `Presente(s) escolhido(s):\n${presentesSelecionados.map(presentes => presentes.join(', ')).join('\n')}\nAcesse nosso site e efetue a compra: ${link}`;
-
-
+    const mensagem1 = `Presente(s) escolhido(s):\n${presentesSelecionados.map(presentes => presentes.join(', ')).join('\n')}\nAcesse nosso site e efetue a compra: ${link1}`;
+    const mensagem2 = `Presente(s) escolhido(s):\n${presentesSelecionados.map(presentes => presentes.join(', ')).join('\n')}\nAcesse nosso site e efetue a compra: ${link2}`;
+    function verificarpresente() {
+        const selectElement = document.querySelector('#escolha-presente'); 
+    
+        if (selectElement.selectedIndex === 1) {
+            return mensagem2;
+        } else {
+           return mensagem1;
+        }
+    }
+    
 
     emailjs.init('R_rmhXYI1TDccG0ek');
 
 
     var emailData = {
+        
         service_id1: 'service_iv8hpeb',
         service_id2: 'service_3y6ub7k',
         template_id: 'template_pmsulah',
@@ -293,26 +314,26 @@ btnsubmit.addEventListener('click', function () {
         template_params: {
             to_name: nome,
             to_email: email,
-            message: mensagem
+            message: verificarpresente(),
         },
     };
     if (email.includes('@gmail.com')) {
 
-            emailjs.send(emailData.service_id1, emailData.template_id, emailData.template_params)
+        emailjs.send(emailData.service_id1, emailData.template_id, emailData.template_params)
             .then(function (response) {
                 console.log('Email enviado com sucesso:', response);
             }, function (error) {
                 console.error('Erro ao enviar o email:', error);
             });
-        
+
     } else {
-     
-            emailjs.send(emailData.service_id2, emailData.template_id, emailData.template_params)
+
+        emailjs.send(emailData.service_id2, emailData.template_id, emailData.template_params)
             .then(function (response) {
                 console.log('Email enviado com sucesso:', response);
             }, function (error) {
                 console.error('Erro ao enviar o email:', error);
-            });     
+            });
 
     }
 
@@ -324,7 +345,7 @@ btnsubmit.addEventListener('click', function () {
 
 const targetDate = new Date('2023-11-25').getTime();
 
-        
+
 function updateCountdown() {
     const currentDate = new Date().getTime();
     const timeRemaining = targetDate - currentDate;
