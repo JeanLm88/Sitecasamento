@@ -121,8 +121,8 @@ a:hover {
 
 #myCarousel {
     max-width: 100%;
-    margin-right: 20px;
     transition: all 0.5s;
+    margin-left: 10px;
 }
 
 #myCarousel img {
@@ -298,7 +298,13 @@ a:hover {
 }
 
 .container-contador{
-    width: 200px;
+    width: 100%;
     margin-left: 20px;
     margin-bottom: 20px;
+    text-align: center;
+    color: #808000;
+}
+.contador{
+    font-size: 20pt;
+
 }

@@ -343,10 +343,11 @@ btnsubmit.addEventListener('click', function (event) {
 
 
 
-const targetDate = new Date('2023-11-25').getTime();
+
 
 
 function updateCountdown() {
+    const targetDate = new Date('2023-11-25T00:00:00');
     const currentDate = new Date().getTime();
     const timeRemaining = targetDate - currentDate;
 
@@ -369,4 +370,6 @@ setInterval(updateCountdown, 1000);
 
 
 updateCountdown();
+
+
 
