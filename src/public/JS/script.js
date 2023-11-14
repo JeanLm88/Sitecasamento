@@ -160,8 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Ventilador",
                 "Cafeteira expresso de cápsulas",
                 "Micro-ondas",
-                "Aspirador de pó",
-                "Cortina blackout"
+                "Aspirador de pó"
             ];
 
             opcoes.forEach(function (opcao) {
@@ -256,7 +255,7 @@ btnsubmit.addEventListener('click', function (event) {
         alert('Selecione um presente.');
         return;
     }
-    
+
     const email = document.querySelector('#email').value;
     const nome = document.querySelector('input[name="name"]').value;
     const presenteescolhidos = document.querySelectorAll('select[name="message"]');
@@ -278,21 +277,21 @@ btnsubmit.addEventListener('click', function (event) {
     const mensagem1 = `Presente(s) escolhido(s):\n${presentesSelecionados.map(presentes => presentes.join(', ')).join('\n')}\nAcesse nosso site e efetue a compra: ${link1}`;
     const mensagem2 = `Presente(s) escolhido(s):\n${presentesSelecionados.map(presentes => presentes.join(', ')).join('\n')}\nAcesse nosso site e efetue a compra: ${link2}`;
     function verificarpresente() {
-        const selectElement = document.querySelector('#escolha-presente'); 
-    
+        const selectElement = document.querySelector('#escolha-presente');
+
         if (selectElement.selectedIndex === 1) {
             return mensagem2;
         } else {
-           return mensagem1;
+            return mensagem1;
         }
     }
-    
+
 
     emailjs.init('R_rmhXYI1TDccG0ek');
 
 
     var emailData = {
-        
+
         service_id1: 'service_iv8hpeb',
         service_id2: 'service_3y6ub7k',
         template_id: 'template_pmsulah',
@@ -356,6 +355,5 @@ setInterval(updateCountdown, 1000);
 
 
 updateCountdown();
-
 
 

@@ -9,8 +9,8 @@
 body {
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: #8080003b;
+    overflow-y: auto;
+    background-color: #ffffff3b;
 }
 
 ::-webkit-scrollbar {
@@ -20,23 +20,26 @@ body {
 /* Define a cor da barra de rolagem */
 ::-webkit-scrollbar-thumb {
     background-color: #acacac;
+    border-radius: 4px;
 }
 
 /* Define a cor do fundo da barra de rolagem */
 ::-webkit-scrollbar-track {
     background-color: #f2f2f232;
+    border-radius: 5px;
 }
 
 a {
     text-decoration: none;
     font-size: 10pt;
-  
+
 }
 
 a:hover {
     text-decoration: underline;
     color: #3f3f00;
 }
+
 .nav-bar {
     width: 100%;
     height: 3.5rem;
@@ -49,12 +52,14 @@ a:hover {
     z-index: 999;
 
 }
+
 .main {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .nav-bar2 {
@@ -63,7 +68,7 @@ a:hover {
 
 
 .link-menu {
-    margin-left: 50px;
+    margin-left: 20px;
     text-decoration: none;
     font-size: 12pt;
     color: #ffffff;
@@ -119,7 +124,7 @@ a:hover {
     font-size: 24px;
 }
 
-#myCarousel {
+.myCarousel {
     max-width: 100%;
     transition: all 0.5s;
     margin-left: 10px;
@@ -163,6 +168,7 @@ a:hover {
     color: #808000;
     font-style: italic;
 }
+
 .titulo-central {
     margin-top: 75px;
     text-align: center;
@@ -173,6 +179,7 @@ a:hover {
     color: #808000;
     font-style: italic;
 }
+
 .container-logoIndex {
     width: 200px;
     height: 60px;
@@ -186,38 +193,14 @@ a:hover {
     align-items: center;
 
 }
-.contador{
+
+.contador {
     font-size: 12pt;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+
 }
 
 @media screen and (max-width: 1000px) {
-
-    .container-list{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-
-    }
-    .container-imglist {
-        width: 200px;
-        height: 230px;
-        overflow: hidden;
-    }
-
-    .texto-list {
-        flex-direction: column;
-        text-align: start;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        padding: 10px;
-    }
-
-    .texto-presente {
-        font-size: 11pt;
-    }
-
 
     .nav-bar {
         display: none;
@@ -237,8 +220,8 @@ a:hover {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         display: none;
-        z-index: 99;
-       
+        z-index: 999;
+
     }
 
     .nav-bar2 {
@@ -250,22 +233,166 @@ a:hover {
         justify-content: stretch;
         flex-direction: column;
         position: absolute;
-        
+
     }
-    .link-menu2{
+
+    .link-menu2 {
         font-size: 13pt;
     }
+
+    .message {
+        max-width: 350px;
+        height: 600px;
+        font-size: medium;
+        overflow-y: auto;
+    }
+
 }
+
 .btnfechar {
     border: none;
     background: none;
     cursor: pointer;
-    
+
 }
-.btnfechar img{
+
+.btnfechar img {
     width: 35px;
     height: 35px;
 }
+
+.container-buttonfechar {
+    width: 50%;
+    display: inline-flex;
+    align-items: start;
+}
+
+.container-infoebtnfechar {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.confirmarpresença {
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: 330px;
+    max-height: 570px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    transition: all 1s;
+    overflow-y: auto;
+}
+
+
+.confirmarpresença h1 {
+    color: #3f3f00;
+}
+
+.info {
+    width: auto;
+    height: 150px;
+    padding: 5px;
+    border-radius: 15px;
+    color: white;
+    background-color: #b7b75e;
+    position: absolute;
+    margin-right: 17px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    transition: all 0.5s;
+
+}
+
+.buttoninfo {
+    cursor: pointer;
+}
+
+.container-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-confirmacao {
+    text-align: center;
+}
+
+.inputform {
+    width: 200px;
+    padding: 12px;
+    border: none;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    background-color: #80800042;
+
+}
+
+.inputform:focus {
+    transition: all 0.3s;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #808000;
+
+}
+
+.inputformsubmit {
+    margin-top: 5px;
+    border-radius: 12px;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    width: 160px;
+    color: #fff;
+    transition: all 0.3s;
+    background-color: #808000;
+}
+
+.inputformadc {
+    margin-top: 5px;
+    border-radius: 12px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    width: 130px;
+    color: #fff;
+    transition: all 0.3s;
+    background-color: #808000;
+}
+
+.inputformadc:focus {
+    border-radius: 15px;
+    background-color: #3f3f00;
+}
+
+.inputformsubmit:hover {
+    background-color: #3f3f007f;
+}
+
+.btnfechar {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 10px;
+
+}
+
 
 .overlay {
     position: fixed;
@@ -274,14 +401,42 @@ a:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Sobreposição transparente */
     display: none;
-    /* Inicialmente oculta */
-    z-index: 99;
-    /* Coloque a sobreposição acima de outros elementos */
+    z-index: 999;
+
 }
 
+.btnconfirmar {
+    border-radius: 12px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: smaller;
+    width: 100px;
+    color: #fff;
+    background-color: #3f3f00;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
 
+.btnconfirmar:hover {
+    background-color: #3f3f007f;
+}
+.btnconfirmarlateral {
+    border-radius: 12px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: smaller;
+    width: 100px;
+    color: #fff;
+    background-color: #3f3f00;
+    margin-left: 47px;
+    margin-bottom: 5px;
+}
+.btnconfirmarlateral:hover {
+    background-color: #3f3f007f;
+}
 
 .container-fecharmenu {
     width: 200px;
@@ -297,14 +452,58 @@ a:hover {
 
 }
 
-.container-contador{
+.container-contador {
     width: 100%;
     margin-left: 20px;
     margin-bottom: 20px;
     text-align: center;
     color: #808000;
 }
-.contador{
+
+.contador {
     font-size: 20pt;
 
 }
+
+.container-message {
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.message {
+    width: 380px;
+    height: 530px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.message button {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #3f3f00;
+    color: #ffffff;
+    font-size: medium;
+    margin-top: 10px;
+}
+.carousel {
+    width: 600px;
+    height: 400px;
+    margin: auto;
+  }
+  
