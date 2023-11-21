@@ -24,6 +24,7 @@ setInterval(updateCountdown2, 1000);
 updateCountdown2();
 
 document.addEventListener("DOMContentLoaded", function () {
+    
     function fecharmessage() {
         containermenssagem = document.getElementById('container-message');
         if (containermenssagem.style.display === 'flex' || containermenssagem.style.display === '') {
@@ -58,3 +59,5 @@ $(document).ready(function(){
       pauseAutoPlayOnHover: false
     });
   });
+
+
